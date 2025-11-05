@@ -1,0 +1,8 @@
+---
+BasedOnStyle: Google
+IndentWidth: 4       # отступы 4 пробела
+TabWidth: 4
+UseTab: Never        # никогда не использовать настоящие табы, только пробелы
+ColumnLimit: 160     # длина строки до 160 символов
+AllowShortFunctionsOnASingleLine: Inline
+PointerAlignment: Left
