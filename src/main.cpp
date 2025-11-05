@@ -17,6 +17,7 @@
 #include "systems/move_system.hpp"
 #include "systems/render_system.hpp"
 #include "systems/selection_system.hpp"
+#include "systems/ui_system.hpp"
 
 int main() {
     InitWindow(1280, 720, "RTS ECS Prototype (2D)");
@@ -28,7 +29,7 @@ int main() {
     camera.zoom = 1.0f;
 
     rts::EntityRegistry registry;
-
+    rts::systems::UiSystem ui;
     // создаём юниты
     for (int i = 0; i < 3; ++i) {
         auto& e = registry.create();
@@ -63,8 +64,7 @@ int main() {
         moveSys.update(GetFrameTime());
         renderSys.update(GetFrameTime());
         selectSys.update(GetFrameTime());
-
-        DrawText("ECS Prototype | Arrows Move Camera | LMB Select | RMB Move", 10, 10, 18, RAYWHITE);
+        ui.update(GetFrameTime());
 
         EndDrawing();
     }
