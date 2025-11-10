@@ -6,6 +6,7 @@
 #include "../ai/avoidance.hpp"
 #include "../ai/formation.hpp"
 #include "../ai/pathfinding.hpp"
+#include "../components/available_to_move.hpp"
 #include "raylib.h"
 #include "system.hpp"
 
@@ -46,7 +47,7 @@ class MoveSystem : public System {
         const Vector2 clickTarget = GetScreenToWorld2D(GetMousePosition(), camera);
 
         std::vector<Entity*> selected;
-        for (auto e : registry.find_all_with<rts::components::Position, rts::components::Selectable>()) {
+        for (auto e : registry.find_all_with<rts::components::Position, rts::components::Selectable, rts::components::AvailableToMove>()) {
             const auto sel = e->get<rts::components::Selectable>();
             if (sel->selected) selected.push_back(e);
         }

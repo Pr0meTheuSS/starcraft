@@ -1,5 +1,6 @@
 #include <algorithm>
 #include <cmath>
+#include <format>
 #include <iostream>
 #include <map>
 #include <memory>
@@ -12,8 +13,10 @@
 #include "ai/simple_avoidance.hpp"
 #include "components/position.hpp"
 #include "components/renderable.hpp"
+#include "components/available_to_move.hpp"
 #include "components/selectable.hpp"
 #include "raylib.h"
+#include "systems/build_system.hpp"
 #include "systems/move_system.hpp"
 #include "systems/render_system.hpp"
 #include "systems/selection_system.hpp"
@@ -30,11 +33,17 @@ int main() {
 
     rts::EntityRegistry registry;
     rts::systems::UiSystem ui;
+    rts::systems::BuildSystem buildSystem(registry, camera);
+    ui.onBuildRequest = [&buildSystem](const std::string& buildingName) {
+        buildSystem.startPlacing(buildingName, 100);
+    };
+
     // создаём юниты
     for (int i = 0; i < 3; ++i) {
         auto& e = registry.create();
         e.add<rts::components::Position>(Vector2{static_cast<float>(100 + 100 * i), static_cast<float>(150 + 50 * i)});
         e.add<rts::components::Selectable>();
+        e.add<rts::components::AvailableToMove>();
         e.add<rts::components::Renderable>(rts::components::Renderable{RED, 15.0f});
     }
 
@@ -62,6 +71,7 @@ int main() {
 
         // порядок систем
         moveSys.update(GetFrameTime());
+        buildSystem.update(GetFrameTime());
         renderSys.update(GetFrameTime());
         selectSys.update(GetFrameTime());
         ui.update(GetFrameTime());
