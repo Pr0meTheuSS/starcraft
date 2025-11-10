@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../ecs_core/entity_registry.hpp"
+#include "ecs_core/entity_registry.hpp"
 
 namespace rts::systems {
 class System {

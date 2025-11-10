@@ -1,7 +1,7 @@
 #pragma once
 
-#include "../components/position.hpp"
-#include "../components/selectable.hpp"
+#include "components/position.hpp"
+#include "components/selectable.hpp"
 // TODO: remove dependency on raylib
 #include "raylib.h"
 #include "system.hpp"

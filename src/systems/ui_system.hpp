@@ -6,7 +6,7 @@
 #include <unordered_map>
 #include <vector>
 
-#include "../raygui.h"
+#include "raygui.h"
 
 namespace rts::systems {
 

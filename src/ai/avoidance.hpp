@@ -2,7 +2,7 @@
 
 #include <vector>
 
-#include "../entities/entity.hpp"
+#include "entities/entity.hpp"
 #include "raylib.h"
 
 namespace rts::ai {

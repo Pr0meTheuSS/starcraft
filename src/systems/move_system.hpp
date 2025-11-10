@@ -3,10 +3,10 @@
 #include <unordered_map>
 #include <vector>
 
-#include "../ai/avoidance.hpp"
-#include "../ai/formation.hpp"
-#include "../ai/pathfinding.hpp"
-#include "../components/available_to_move.hpp"
+#include "ai/avoidance.hpp"
+#include "ai/formation.hpp"
+#include "ai/pathfinding.hpp"
+#include "components/available_to_move.hpp"
 #include "raylib.h"
 #include "system.hpp"
 

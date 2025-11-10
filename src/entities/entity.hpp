@@ -5,7 +5,7 @@
 #include <memory>
 #include <typeindex>
 
-#include "../components/component.hpp"
+#include "components/component.hpp"
 
 namespace rts {
 

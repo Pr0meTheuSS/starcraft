@@ -2,9 +2,9 @@
 
 #include <cmath>
 
-#include "../components/build_preview.hpp"
-#include "../components/position.hpp"
-#include "../components/renderable.hpp"
+#include "components/build_preview.hpp"
+#include "components/position.hpp"
+#include "components/renderable.hpp"
 #include "raylib.h"
 #include "system.hpp"
 

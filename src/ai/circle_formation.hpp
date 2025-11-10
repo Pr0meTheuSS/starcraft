@@ -1,7 +1,7 @@
 #pragma once
 #include <cmath>
 
-#include "../entities/entity.hpp"
+#include "entities/entity.hpp"
 #include "formation.hpp"
 
 namespace rts::ai {

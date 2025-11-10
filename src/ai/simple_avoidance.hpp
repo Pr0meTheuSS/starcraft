@@ -2,7 +2,7 @@
 #include <cmath>
 
 #include "avoidance.hpp"
-#include "../components/position.hpp"
+#include "components/position.hpp"
 
 namespace rts::ai {
 
